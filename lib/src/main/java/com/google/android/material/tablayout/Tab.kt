@@ -14,18 +14,38 @@
  * limitations under the License.
  */
 
-package com.google.android.material.card
+package com.google.android.material.tablayout
 
 import androidx.core.content.ContextCompat
+import androidx.core.graphics.drawable.DrawableCompat
 import com.google.android.material.internal.NO_GETTER
 import com.google.android.material.internal.noGetter
+import com.google.android.material.tabs.TabLayout
 
-var MaterialCardView.strokeColorResource: Int
+var TabLayout.Tab.iconColor: Int
     @Deprecated(NO_GETTER, level = DeprecationLevel.ERROR)
     get() = noGetter()
-    set(value) { strokeColor = ContextCompat.getColor(context, value) }
+    set(value) {
+        icon?.let { DrawableCompat.setTint(it, value) }
+    }
 
-var MaterialCardView.strokeWidthResource: Int
+var TabLayout.Tab.iconColorResource: Int
     @Deprecated(NO_GETTER, level = DeprecationLevel.ERROR)
     get() = noGetter()
-    set(value) { strokeWidth = resources.getDimensionPixelSize(value) }
+    set(value) {
+        iconColor = ContextCompat.getColor(parent.context, value)
+    }
+
+var TabLayout.Tab.iconResource: Int
+    @Deprecated(NO_GETTER, level = DeprecationLevel.ERROR)
+    get() = noGetter()
+    set(value) {
+        setIcon(value)
+    }
+
+var TabLayout.Tab.textResource: Int
+    @Deprecated(NO_GETTER, level = DeprecationLevel.ERROR)
+    get() = noGetter()
+    set(value) {
+        setText(value)
+    }

@@ -46,6 +46,20 @@ var MaterialButton.iconTintResource: Int
     get() = noGetter()
     set(value) { setIconTintResource(value) }
 
+var MaterialButton.rippleColorInt: Int
+    @Deprecated(NO_GETTER, level = DeprecationLevel.ERROR)
+    get() = noGetter()
+    set(value) {
+        rippleColor = ColorStateList.valueOf(value)
+    }
+
+var MaterialButton.rippleColorIntResource: Int
+    @Deprecated(NO_GETTER, level = DeprecationLevel.ERROR)
+    get() = noGetter()
+    set(value) {
+        rippleColorInt = ContextCompat.getColor(context, value)
+    }
+
 var MaterialButton.strokeColorResource: Int
     @Deprecated(NO_GETTER, level = DeprecationLevel.ERROR)
     get() = noGetter()
