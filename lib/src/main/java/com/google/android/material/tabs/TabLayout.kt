@@ -14,14 +14,13 @@
  * limitations under the License.
  */
 
-package com.google.android.material.tablayout
+package com.google.android.material.tabs
 
 import android.content.res.ColorStateList
 import android.graphics.drawable.Drawable
 import androidx.core.content.ContextCompat
 import com.google.android.material.internal.NO_GETTER
 import com.google.android.material.internal.noGetter
-import com.google.android.material.tabs.TabLayout
 
 var TabLayout.selectedTabIndicator: Drawable?
     @Deprecated(NO_GETTER, level = DeprecationLevel.ERROR)
@@ -95,7 +94,7 @@ fun TabLayout.setTabIconColors(normalColor: Int, selectedColor: Int) {
     )
 }
 
-fun TabLayout.setTabContentColors(normalColor: Int, selectedColor: Int) {
+fun TabLayout.setTabColors(normalColor: Int, selectedColor: Int) {
     setTabIconColors(normalColor, selectedColor)
     setTabTextColors(normalColor, selectedColor)
 }

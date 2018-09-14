@@ -14,13 +14,12 @@
  * limitations under the License.
  */
 
-package com.google.android.material.tablayout
+package com.google.android.material.tabs
 
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.DrawableCompat
 import com.google.android.material.internal.NO_GETTER
 import com.google.android.material.internal.noGetter
-import com.google.android.material.tabs.TabLayout
 
 var TabLayout.Tab.iconColor: Int
     @Deprecated(NO_GETTER, level = DeprecationLevel.ERROR)
