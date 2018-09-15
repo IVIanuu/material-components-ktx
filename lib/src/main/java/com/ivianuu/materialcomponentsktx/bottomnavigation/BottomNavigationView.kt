@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.android.material.bottomnavigation
+package com.ivianuu.materialcomponentsktx.bottomnavigation
 
 import android.annotation.SuppressLint
 import android.content.res.ColorStateList
@@ -25,10 +25,13 @@ import android.graphics.drawable.RippleDrawable
 import android.os.Build
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.DrawableCompat
-import com.google.android.material.internal.NO_GETTER
-import com.google.android.material.internal.field
-import com.google.android.material.internal.noGetter
+import com.google.android.material.bottomnavigation.BottomNavigationItemView
+import com.google.android.material.bottomnavigation.BottomNavigationMenuView
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.ripple.RippleUtils
+import com.ivianuu.materialcomponentsktx.internal.NO_GETTER
+import com.ivianuu.materialcomponentsktx.internal.field
+import com.ivianuu.materialcomponentsktx.internal.noGetter
 
 var BottomNavigationView.itemIconSizeResource: Int
     @Deprecated(NO_GETTER, level = DeprecationLevel.ERROR)

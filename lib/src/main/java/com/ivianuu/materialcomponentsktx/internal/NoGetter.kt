@@ -14,21 +14,8 @@
  * limitations under the License.
  */
 
-package com.google.android.material.internal
+package com.ivianuu.materialcomponentsktx.internal
 
-import java.lang.reflect.Field
-import kotlin.reflect.KClass
+internal const val NO_GETTER = "Property does not have a getter"
 
-private val FIELD_CACHE = mutableMapOf<Class<*>, MutableMap<String, Field?>>()
-
-fun KClass<*>.field(name: String) = java.field(name)
-
-fun Class<*>.field(name: String) = FIELD_CACHE.getOrPut(this) { mutableMapOf() }
-    .getOrPut(name) {
-        try {
-            getDeclaredField(name).apply { isAccessible = true }
-        } catch (e: Exception) {
-            null
-        }
-    }
-    ?: throw IllegalArgumentException("${this} field not found $name")
+internal fun noGetter(): Nothing = throw IllegalAccessException("Property does not have a getter")

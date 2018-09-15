@@ -14,18 +14,21 @@
  * limitations under the License.
  */
 
-package com.google.android.material.card
+package com.ivianuu.materialcomponentsktx.internal
 
-import androidx.core.content.ContextCompat
-import com.google.android.material.internal.NO_GETTER
-import com.google.android.material.internal.noGetter
+import java.lang.reflect.Field
+import kotlin.reflect.KClass
 
-var MaterialCardView.strokeColorResource: Int
-    @Deprecated(NO_GETTER, level = DeprecationLevel.ERROR)
-    get() = noGetter()
-    set(value) { strokeColor = ContextCompat.getColor(context, value) }
+private val FIELD_CACHE = mutableMapOf<Class<*>, MutableMap<String, Field?>>()
 
-var MaterialCardView.strokeWidthResource: Int
-    @Deprecated(NO_GETTER, level = DeprecationLevel.ERROR)
-    get() = noGetter()
-    set(value) { strokeWidth = resources.getDimensionPixelSize(value) }
+fun KClass<*>.field(name: String) = java.field(name)
+
+fun Class<*>.field(name: String) = FIELD_CACHE.getOrPut(this) { mutableMapOf() }
+    .getOrPut(name) {
+        try {
+            getDeclaredField(name).apply { isAccessible = true }
+        } catch (e: Exception) {
+            null
+        }
+    }
+    ?: throw IllegalArgumentException("${this} field not found $name")

@@ -21,7 +21,7 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion Versions.compileSdk
     defaultConfig {
-        applicationId "com.google.android.material.sample"
+        applicationId "com.ivianuu.materialcomponentsktx.sample"
         minSdkVersion Versions.minSdk
         targetSdkVersion Versions.targetSdk
         versionCode Versions.versionCode

@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-package com.google.android.material.floatingactionbutton
+package com.ivianuu.materialcomponentsktx.floatingactionbutton
 
 import android.content.res.ColorStateList
 import androidx.core.content.ContextCompat
-import com.google.android.material.internal.NO_GETTER
-import com.google.android.material.internal.noGetter
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.ivianuu.materialcomponentsktx.internal.NO_GETTER
+import com.ivianuu.materialcomponentsktx.internal.noGetter
 
 var FloatingActionButton.backgroundColor: Int
     @Deprecated(NO_GETTER, level = DeprecationLevel.ERROR)

@@ -14,12 +14,14 @@
  * limitations under the License.
  */
 
-package com.google.android.material.snackbar
+package com.ivianuu.materialcomponentsktx.snackbar
 
 import android.view.View
 import androidx.core.content.ContextCompat
-import com.google.android.material.internal.NO_GETTER
-import com.google.android.material.internal.noGetter
+import com.google.android.material.snackbar.BaseTransientBottomBar
+import com.google.android.material.snackbar.Snackbar
+import com.ivianuu.materialcomponentsktx.internal.NO_GETTER
+import com.ivianuu.materialcomponentsktx.internal.noGetter
 import kotlinx.android.synthetic.main.mtrl_layout_snackbar_include.view.*
 
 var Snackbar.backgroundColor: Int

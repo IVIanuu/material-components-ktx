@@ -14,13 +14,14 @@
  * limitations under the License.
  */
 
-package com.google.android.material.tabs
+package com.ivianuu.materialcomponentsktx.tabs
 
 import android.content.res.ColorStateList
 import android.graphics.drawable.Drawable
 import androidx.core.content.ContextCompat
-import com.google.android.material.internal.NO_GETTER
-import com.google.android.material.internal.noGetter
+import com.google.android.material.tabs.TabLayout
+import com.ivianuu.materialcomponentsktx.internal.NO_GETTER
+import com.ivianuu.materialcomponentsktx.internal.noGetter
 
 var TabLayout.selectedTabIndicator: Drawable?
     @Deprecated(NO_GETTER, level = DeprecationLevel.ERROR)

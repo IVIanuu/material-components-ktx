@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.android.material.internal
+package com.ivianuu.materialcomponentsktx.internal
 
 import android.content.Context
 

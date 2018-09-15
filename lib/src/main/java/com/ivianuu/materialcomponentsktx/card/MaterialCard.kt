@@ -14,37 +14,19 @@
  * limitations under the License.
  */
 
-package com.google.android.material.tabs
+package com.ivianuu.materialcomponentsktx.card
 
 import androidx.core.content.ContextCompat
-import androidx.core.graphics.drawable.DrawableCompat
-import com.google.android.material.internal.NO_GETTER
-import com.google.android.material.internal.noGetter
+import com.google.android.material.card.MaterialCardView
+import com.ivianuu.materialcomponentsktx.internal.NO_GETTER
+import com.ivianuu.materialcomponentsktx.internal.noGetter
 
-var TabLayout.Tab.iconColor: Int
+var MaterialCardView.strokeColorResource: Int
     @Deprecated(NO_GETTER, level = DeprecationLevel.ERROR)
     get() = noGetter()
-    set(value) {
-        icon?.let { DrawableCompat.setTint(it, value) }
-    }
+    set(value) { strokeColor = ContextCompat.getColor(context, value) }
 
-var TabLayout.Tab.iconColorResource: Int
+var MaterialCardView.strokeWidthResource: Int
     @Deprecated(NO_GETTER, level = DeprecationLevel.ERROR)
     get() = noGetter()
-    set(value) {
-        iconColor = ContextCompat.getColor(parent.context, value)
-    }
-
-var TabLayout.Tab.iconResource: Int
-    @Deprecated(NO_GETTER, level = DeprecationLevel.ERROR)
-    get() = noGetter()
-    set(value) {
-        setIcon(value)
-    }
-
-var TabLayout.Tab.textResource: Int
-    @Deprecated(NO_GETTER, level = DeprecationLevel.ERROR)
-    get() = noGetter()
-    set(value) {
-        setText(value)
-    }
+    set(value) { strokeWidth = resources.getDimensionPixelSize(value) }

@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package com.google.android.material.textfield
-
+package com.ivianuu.materialcomponentsktx.textfield
 
 import android.content.res.ColorStateList
-import com.google.android.material.internal.NO_GETTER
-import com.google.android.material.internal.colorAttr
-import com.google.android.material.internal.noGetter
+import com.google.android.material.textfield.TextInputLayout
+import com.ivianuu.materialcomponentsktx.internal.NO_GETTER
+import com.ivianuu.materialcomponentsktx.internal.colorAttr
+import com.ivianuu.materialcomponentsktx.internal.noGetter
 
 var TextInputLayout.focusedHintTextColor: Int
     @Deprecated(NO_GETTER, level = DeprecationLevel.ERROR)
