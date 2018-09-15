@@ -1,0 +1,2 @@
+# Bottom navigation
+-keepclassmembernames class com.google.android.material.bottomnavigation.** { *; }
