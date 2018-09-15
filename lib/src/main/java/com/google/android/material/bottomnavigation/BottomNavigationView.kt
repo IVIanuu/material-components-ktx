@@ -127,38 +127,3 @@ fun BottomNavigationView.setItemColors(normalColor: Int, selectedColor: Int) {
     setItemIconColors(normalColor, selectedColor)
     setItemTextColors(normalColor, selectedColor)
 }
-
-/**
-fun BottomNavigationView.tint(color: Int) {
-setBackgroundColor(color)
-
-val activeColor = prima
-
-itemTextColor = ColorStateList(
-arrayOf(
-intArrayOf(android.R.attr.state_selected),
-intArrayOf()
-),
-intArrayOf(activeColor, inactiveColor)
-)
-
-
-setItemRippleColor(color)
-}
-
-fun BottomNavigationView.setItemRippleColor(color: Int) {
-try {
-val menuViewField = BottomNavigationView::class.field("menuView")
-val menuView = menuViewField.get(this)
-val buttonsField = menuView::class.field("buttons")
-val buttons = buttonsField.get(menuView) as Array<BottomNavigationItemView>
-buttons.forEach {
-it.background.setTintList(
-RippleUtils.convertToRippleDrawableColor(ColorStateList.valueOf(color))
-)
-}
-} catch (e: Exception) {
-e.printStackTrace()
-}
-}
- */
