@@ -25,8 +25,8 @@ import android.graphics.drawable.RippleDrawable
 import android.os.Build
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.DrawableCompat
-import androidx.core.view.ViewCompat
 import com.google.android.material.internal.NO_GETTER
+import com.google.android.material.internal.field
 import com.google.android.material.internal.noGetter
 import com.google.android.material.ripple.RippleUtils
 
@@ -50,29 +50,41 @@ var BottomNavigationView.itemRippleColor: Int
     get() = noGetter()
     @SuppressLint("RestrictedApi")
     set(value) {
-        val rippleColor = RippleUtils.convertToRippleDrawableColor(ColorStateList.valueOf(value))
+        val rippleColor =
+            RippleUtils.convertToRippleDrawableColor(ColorStateList.valueOf(value))
 
-        val maskDrawable = GradientDrawable().apply {
-            cornerRadius = 0.00001F
-            setColor(Color.WHITE)
+        try {
+            val menuView =
+                BottomNavigationView::class.field("menuView").get(this) as BottomNavigationMenuView
+
+            val buttons =
+                menuView::class.field("buttons").get(menuView) as Array<BottomNavigationItemView>
+
+            buttons.forEach { button ->
+                val background = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    RippleDrawable(
+                        rippleColor,
+                        null,
+                        null
+                    )
+                } else {
+                    val maskDrawable = GradientDrawable().apply {
+                        cornerRadius = 0.00001F
+                        setColor(Color.WHITE)
+                    }
+
+                    val contentDrawable = GradientDrawable()
+                    contentDrawable.setColor(Color.TRANSPARENT)
+
+                    val rippleDrawable = DrawableCompat.wrap(maskDrawable)
+                    DrawableCompat.setTintList(rippleDrawable, rippleColor)
+                    LayerDrawable(arrayOf(contentDrawable, rippleDrawable))
+                }
+
+                button.setItemBackground(background)
+            }
+        } catch (e: Exception) {
         }
-
-        val background = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            RippleDrawable(
-                rippleColor,
-                null,
-                maskDrawable
-            )
-        } else {
-            val contentDrawable = GradientDrawable()
-            contentDrawable.setColor(Color.TRANSPARENT)
-
-            val rippleDrawable = DrawableCompat.wrap(maskDrawable)
-            DrawableCompat.setTintList(rippleDrawable, rippleColor)
-            LayerDrawable(arrayOf(contentDrawable, rippleDrawable))
-        }
-
-        ViewCompat.setBackground(this, background)
     }
 
 var BottomNavigationView.itemRippleColorResource: Int
