@@ -77,8 +77,18 @@ fun Snackbar.addCallback(
     return callback
 }
 
-inline fun View.snackbar(textRes: Int, length: Int = Snackbar.LENGTH_LONG, block: Snackbar.() -> Unit) =
+private val snackbarInitStub: Snackbar.() -> Unit = {}
+
+fun View.snackbar(
+    textRes: Int,
+    length: Int = Snackbar.LENGTH_LONG,
+    block: Snackbar.() -> Unit = snackbarInitStub
+) =
     Snackbar.make(this, textRes, length).apply(block).apply { show() }
 
-inline fun View.snackbar(text: CharSequence, length: Int = Snackbar.LENGTH_LONG, block: Snackbar.() -> Unit) =
+fun View.snackbar(
+    text: CharSequence,
+    length: Int = Snackbar.LENGTH_LONG,
+    block: Snackbar.() -> Unit = snackbarInitStub
+) =
     Snackbar.make(this, text, length).apply(block).apply { show() }
