@@ -16,26 +16,9 @@
 
 package com.ivianuu.materialcomponentsktx.floatingactionbutton
 
-import android.content.res.ColorStateList
-import androidx.core.content.ContextCompat
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.ivianuu.materialcomponentsktx.internal.NO_GETTER
 import com.ivianuu.materialcomponentsktx.internal.noGetter
-
-var FloatingActionButton.backgroundColor: Int
-    @Deprecated(NO_GETTER, level = DeprecationLevel.ERROR)
-    get() = noGetter()
-    set(value) { backgroundTintList = ColorStateList.valueOf(value) }
-
-var FloatingActionButton.backgroundColorResource: Int
-    @Deprecated(NO_GETTER, level = DeprecationLevel.ERROR)
-    get() = noGetter()
-    set(value) { backgroundColor = ContextCompat.getColor(context, value) }
-
-var FloatingActionButton.rippleColorResource: Int
-    @Deprecated(NO_GETTER, level = DeprecationLevel.ERROR)
-    get() = noGetter()
-    set(value) { rippleColor = ContextCompat.getColor(context, value) }
 
 var FloatingActionButton.shouldShow: Boolean
     @Deprecated(NO_GETTER, level = DeprecationLevel.ERROR)

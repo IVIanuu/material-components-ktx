@@ -17,42 +17,8 @@
 package com.ivianuu.materialcomponentsktx.snackbar
 
 import android.view.View
-import androidx.core.content.ContextCompat
 import com.google.android.material.snackbar.BaseTransientBottomBar
 import com.google.android.material.snackbar.Snackbar
-import com.ivianuu.materialcomponentsktx.internal.NO_GETTER
-import com.ivianuu.materialcomponentsktx.internal.noGetter
-import kotlinx.android.synthetic.main.mtrl_layout_snackbar_include.view.*
-
-var Snackbar.backgroundColor: Int
-    @Deprecated(NO_GETTER, level = DeprecationLevel.ERROR)
-    get() = noGetter()
-    set(value) { view.setBackgroundColor(value) }
-
-var Snackbar.backgroundColorResource: Int
-    @Deprecated(NO_GETTER, level = DeprecationLevel.ERROR)
-    get() = noGetter()
-    set(value) { backgroundColor = ContextCompat.getColor(context, value) }
-
-var Snackbar.textColor: Int
-    @Deprecated(NO_GETTER, level = DeprecationLevel.ERROR)
-    get() = noGetter()
-    set(value) { view.snackbar_text.setTextColor(value) }
-
-var Snackbar.textColorResource: Int
-    @Deprecated(NO_GETTER, level = DeprecationLevel.ERROR)
-    get() = noGetter()
-    set(value) { textColor = ContextCompat.getColor(context, value) }
-
-var Snackbar.actionTextColor: Int
-    @Deprecated(NO_GETTER, level = DeprecationLevel.ERROR)
-    get() = noGetter()
-    set(value) { setActionTextColor(value) }
-
-var Snackbar.actionTextColorResource: Int
-    @Deprecated(NO_GETTER, level = DeprecationLevel.ERROR)
-    get() = noGetter()
-    set(value) { actionTextColor = ContextCompat.getColor(context, value) }
 
 fun Snackbar.doOnShown(block: (transientBottomBar: Snackbar) -> Unit) =
     addCallback(onShown = block)
