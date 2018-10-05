@@ -18,15 +18,6 @@ package com.ivianuu.materialcomponentsktx.sample
 
 import android.graphics.Color
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
-import com.ivianuu.materialcomponentsktx.bottomnavigation.itemRippleColorResource
-import com.ivianuu.materialcomponentsktx.bottomnavigation.setItemColors
-import com.ivianuu.materialcomponentsktx.tabs.iconResource
-import com.ivianuu.materialcomponentsktx.tabs.selectedTabIndicatorColorResource
-import com.ivianuu.materialcomponentsktx.tabs.setTabColors
-import com.ivianuu.materialcomponentsktx.tabs.tabRippleColorIntResource
-import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
